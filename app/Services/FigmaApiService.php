@@ -119,7 +119,7 @@ class FigmaApiService
      */
     public static function extractFileKey(string $url): ?string
     {
-        if (preg_match('/figma\.com\/(?:file|design)\/([a-zA-Z0-9]+)/', $url, $matches)) {
+        if (preg_match('/figma\.com\/(?:file|design|proto)\/([a-zA-Z0-9]+)/', $url, $matches)) {
             return $matches[1];
         }
 
