@@ -834,6 +834,206 @@
             margin: 0;
         }
 
+        /* ========== SCROLL ANIMATIONS ========== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-up.delay-1 { transition-delay: 0.1s; }
+        .fade-up.delay-2 { transition-delay: 0.2s; }
+        .fade-up.delay-3 { transition-delay: 0.3s; }
+        .fade-up.delay-4 { transition-delay: 0.4s; }
+        .fade-up.delay-5 { transition-delay: 0.5s; }
+        .fade-up.delay-6 { transition-delay: 0.6s; }
+
+        /* ========== NAVBAR SCROLL EFFECT ========== */
+        .navbar-vacation {
+            transition: box-shadow 0.3s, background 0.3s;
+        }
+
+        .navbar-vacation.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+
+        /* ========== STATS SECTION ========== */
+        .stats-section {
+            padding: 48px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .stat-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .stat-icon.si-1 { background: #dbeafe; color: #1a56db; }
+        .stat-icon.si-2 { background: #d1fae5; color: #059669; }
+        .stat-icon.si-3 { background: #fef3c7; color: #d97706; }
+        .stat-icon.si-4 { background: #fce7f3; color: #db2777; }
+
+        /* ========== WHY CHOOSE US ========== */
+        .why-card {
+            text-align: center;
+            padding: 32px 20px;
+            border-radius: 16px;
+            background: #fff;
+            border: 1.5px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+
+        .why-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 30px rgba(26,86,219,0.1);
+            transform: translateY(-4px);
+        }
+
+        .why-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+
+        .why-icon.wi-1 { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #1a56db; }
+        .why-icon.wi-2 { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #059669; }
+        .why-icon.wi-3 { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #d97706; }
+        .why-icon.wi-4 { background: linear-gradient(135deg, #fce7f3, #fbcfe8); color: #db2777; }
+
+        .why-card h5 {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ========== BACK TO TOP ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(26,86,219,0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            z-index: 1040;
+            cursor: pointer;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26,86,219,0.4);
+        }
+
+        /* ========== WISHLIST HEART ========== */
+        .wishlist-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.85);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 5;
+            backdrop-filter: blur(4px);
+        }
+
+        .wishlist-btn:hover,
+        .wishlist-btn.active {
+            color: #ef4444;
+            background: rgba(255,255,255,0.95);
+        }
+
+        .wishlist-btn.active i::before {
+            content: "\F59D";
+        }
+
+        .dest-img-placeholder {
+            position: relative;
+        }
+
+        /* ========== DESTINATION FILTER TRANSITION ========== */
+        .destination-col {
+            transition: opacity 0.4s, transform 0.4s;
+        }
+
+        .destination-col.hiding {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .destination-col.hidden-filter {
+            display: none;
+        }
+
         /* ========== RESPONSIVE ========== */
         @media (max-width: 991.98px) {
             .hero-content h1 {
@@ -851,6 +1051,12 @@
 
             .promo-banner .promo-content h2 {
                 font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .stat-number {
+                font-size: 1.8rem;
             }
         }
 
@@ -913,6 +1119,27 @@
             .hero-content h1 {
                 font-size: 1.55rem;
             }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stat-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+
+            .why-card {
+                padding: 24px 16px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -947,9 +1174,31 @@
     <section class="hero-section">
         <div class="hero-mountains">
             <svg viewBox="0 0 800 400" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,400 L150,120 L250,250 L350,80 L500,220 L600,50 L750,200 L800,150 L800,400 Z" fill="rgba(255,255,255,0.06)"/>
-                <path d="M0,400 L100,200 L200,300 L350,150 L500,280 L650,100 L800,250 L800,400 Z" fill="rgba(255,255,255,0.04)"/>
-                <circle cx="680" cy="60" r="30" fill="rgba(255,255,255,0.06)"/>
+                <!-- Sun -->
+                <circle cx="650" cy="60" r="40" fill="rgba(255,200,50,0.15)"/>
+                <circle cx="650" cy="60" r="28" fill="rgba(255,220,80,0.12)"/>
+                <!-- Clouds -->
+                <ellipse cx="180" cy="70" rx="60" ry="18" fill="rgba(255,255,255,0.06)"/>
+                <ellipse cx="210" cy="58" rx="40" ry="14" fill="rgba(255,255,255,0.05)"/>
+                <ellipse cx="520" cy="90" rx="50" ry="15" fill="rgba(255,255,255,0.05)"/>
+                <!-- Far mountains -->
+                <path d="M0,400 L80,180 L160,280 L260,120 L360,240 L440,90 L540,200 L620,60 L720,180 L800,130 L800,400 Z" fill="rgba(255,255,255,0.04)"/>
+                <!-- Near mountains -->
+                <path d="M0,400 L100,220 L180,310 L300,160 L420,290 L520,130 L640,260 L740,170 L800,220 L800,400 Z" fill="rgba(255,255,255,0.06)"/>
+                <!-- Snow caps -->
+                <path d="M260,120 L240,160 L280,160 Z" fill="rgba(255,255,255,0.08)"/>
+                <path d="M440,90 L420,130 L460,130 Z" fill="rgba(255,255,255,0.08)"/>
+                <path d="M620,60 L600,100 L640,100 Z" fill="rgba(255,255,255,0.08)"/>
+                <!-- Trees -->
+                <path d="M150,400 L155,350 L145,350 Z" fill="rgba(255,255,255,0.04)"/>
+                <path d="M180,400 L186,340 L174,340 Z" fill="rgba(255,255,255,0.04)"/>
+                <path d="M680,400 L688,330 L672,330 Z" fill="rgba(255,255,255,0.04)"/>
+                <path d="M710,400 L716,350 L704,350 Z" fill="rgba(255,255,255,0.04)"/>
+                <path d="M740,400 L748,340 L732,340 Z" fill="rgba(255,255,255,0.04)"/>
+                <!-- Birds -->
+                <path d="M400,100 Q405,95 410,100" stroke="rgba(255,255,255,0.08)" fill="none" stroke-width="1.5"/>
+                <path d="M430,80 Q435,75 440,80" stroke="rgba(255,255,255,0.08)" fill="none" stroke-width="1.5"/>
+                <path d="M380,120 Q385,115 390,120" stroke="rgba(255,255,255,0.06)" fill="none" stroke-width="1.5"/>
             </svg>
         </div>
         <div class="container">
@@ -985,6 +1234,42 @@
         </div>
     </div>
 
+    <!-- ========== STATS COUNTER ========== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-3 col-6">
+                    <div class="stat-item fade-up">
+                        <div class="stat-icon si-1"><i class="bi bi-globe-americas"></i></div>
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Destinations</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="stat-item fade-up delay-1">
+                        <div class="stat-icon si-2"><i class="bi bi-people"></i></div>
+                        <div class="stat-number" data-target="50000">0</div>
+                        <div class="stat-label">Happy Travellers</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="stat-item fade-up delay-2">
+                        <div class="stat-icon si-3"><i class="bi bi-star"></i></div>
+                        <div class="stat-number" data-target="4200">0</div>
+                        <div class="stat-label">5-Star Reviews</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="stat-item fade-up delay-3">
+                        <div class="stat-icon si-4"><i class="bi bi-headset"></i></div>
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">24/7 Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== TRENDING DESTINATIONS ========== -->
     <section class="py-5 mt-4">
         <div class="container">
@@ -997,18 +1282,21 @@
             </div>
 
             <div class="filter-tabs mb-4">
-                <button class="filter-tab active">All</button>
-                <button class="filter-tab">Europe</button>
-                <button class="filter-tab">Asia</button>
-                <button class="filter-tab">Americas</button>
-                <button class="filter-tab">Africa</button>
-                <button class="filter-tab">Oceania</button>
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="europe">Europe</button>
+                <button class="filter-tab" data-filter="asia">Asia</button>
+                <button class="filter-tab" data-filter="americas">Americas</button>
+                <button class="filter-tab" data-filter="africa">Africa</button>
+                <button class="filter-tab" data-filter="oceania">Oceania</button>
             </div>
 
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
+            <div class="row g-4" id="destinationGrid">
+                <div class="col-lg-4 col-md-6 destination-col fade-up" data-region="europe">
                     <div class="destination-card">
-                        <div class="dest-img-placeholder dest-img-1"><i class="bi bi-building"></i></div>
+                        <div class="dest-img-placeholder dest-img-1">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+                            <i class="bi bi-building"></i>
+                        </div>
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="city-name">Paris</div>
@@ -1018,9 +1306,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 destination-col fade-up delay-1" data-region="asia">
                     <div class="destination-card">
-                        <div class="dest-img-placeholder dest-img-2"><i class="bi bi-tree"></i></div>
+                        <div class="dest-img-placeholder dest-img-2">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+                            <i class="bi bi-tree"></i>
+                        </div>
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="city-name">Bali</div>
@@ -1030,9 +1321,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 destination-col fade-up delay-2" data-region="europe">
                     <div class="destination-card">
-                        <div class="dest-img-placeholder dest-img-3"><i class="bi bi-sun"></i></div>
+                        <div class="dest-img-placeholder dest-img-3">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+                            <i class="bi bi-sun"></i>
+                        </div>
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="city-name">Santorini</div>
@@ -1042,9 +1336,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 destination-col fade-up delay-3" data-region="asia">
                     <div class="destination-card">
-                        <div class="dest-img-placeholder dest-img-4"><i class="bi bi-snow2"></i></div>
+                        <div class="dest-img-placeholder dest-img-4">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+                            <i class="bi bi-snow2"></i>
+                        </div>
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="city-name">Tokyo</div>
@@ -1054,9 +1351,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 destination-col fade-up delay-4" data-region="asia">
                     <div class="destination-card">
-                        <div class="dest-img-placeholder dest-img-5"><i class="bi bi-water"></i></div>
+                        <div class="dest-img-placeholder dest-img-5">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+                            <i class="bi bi-water"></i>
+                        </div>
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="city-name">Maldives</div>
@@ -1066,9 +1366,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 destination-col fade-up delay-5" data-region="americas">
                     <div class="destination-card">
-                        <div class="dest-img-placeholder dest-img-6"><i class="bi bi-globe-americas"></i></div>
+                        <div class="dest-img-placeholder dest-img-6">
+                            <button class="wishlist-btn" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+                            <i class="bi bi-globe-americas"></i>
+                        </div>
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="city-name">New York</div>
@@ -1105,48 +1408,48 @@
     <!-- ========== OUR CATALOGS ========== -->
     <section class="py-5">
         <div class="container">
-            <div class="text-center mb-4">
+            <div class="text-center mb-4 fade-up">
                 <h2 class="section-title">Our Catalogs</h2>
                 <p class="section-subtitle">Browse our wide range of travel services</p>
             </div>
 
             <div class="row g-4">
-                <div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6 fade-up">
                     <div class="catalog-card">
                         <div class="catalog-icon hotels"><i class="bi bi-building"></i></div>
                         <h6>Hotels</h6>
                         <p>2,340 listings</p>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6 fade-up delay-1">
                     <div class="catalog-card">
                         <div class="catalog-icon flights"><i class="bi bi-airplane"></i></div>
                         <h6>Flights</h6>
                         <p>1,120 routes</p>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6 fade-up delay-2">
                     <div class="catalog-card">
                         <div class="catalog-icon activities"><i class="bi bi-compass"></i></div>
                         <h6>Activities</h6>
                         <p>860 experiences</p>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6 fade-up delay-3">
                     <div class="catalog-card">
                         <div class="catalog-icon packages"><i class="bi bi-box-seam"></i></div>
                         <h6>Packages</h6>
                         <p>540 bundles</p>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6 fade-up delay-4">
                     <div class="catalog-card">
                         <div class="catalog-icon cruises"><i class="bi bi-tsunami"></i></div>
                         <h6>Cruises</h6>
                         <p>230 voyages</p>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6 fade-up delay-5">
                     <div class="catalog-card">
                         <div class="catalog-icon transport"><i class="bi bi-car-front"></i></div>
                         <h6>Transport</h6>
@@ -1352,13 +1655,13 @@
     <!-- ========== CUSTOMER REVIEWS ========== -->
     <section class="py-5">
         <div class="container">
-            <div class="text-center mb-4">
+            <div class="text-center mb-4 fade-up">
                 <h2 class="section-title">Customer Reviews</h2>
                 <p class="section-subtitle">What our happy travellers say about us</p>
             </div>
 
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 fade-up">
                     <div class="review-card h-100">
                         <div class="review-stars">
                             <i class="bi bi-star-fill"></i>
@@ -1377,7 +1680,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 fade-up delay-1">
                     <div class="review-card h-100">
                         <div class="review-stars">
                             <i class="bi bi-star-fill"></i>
@@ -1396,7 +1699,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 fade-up delay-2">
                     <div class="review-card h-100">
                         <div class="review-stars">
                             <i class="bi bi-star-fill"></i>
@@ -1483,6 +1786,52 @@
         </div>
     </section>
 
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5 fade-up">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">We make your travel experience seamless and memorable</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="why-card h-100">
+                        <div class="why-icon wi-1"><i class="bi bi-shield-check"></i></div>
+                        <h5>Best Price Guarantee</h5>
+                        <p>Find a lower price? We'll match it and give you an extra 10% off your booking.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up delay-1">
+                    <div class="why-card h-100">
+                        <div class="why-icon wi-2"><i class="bi bi-arrow-repeat"></i></div>
+                        <h5>Easy Cancellation</h5>
+                        <p>Plans changed? Cancel up to 48 hours before your trip for a full refund.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up delay-2">
+                    <div class="why-card h-100">
+                        <div class="why-icon wi-3"><i class="bi bi-patch-check"></i></div>
+                        <h5>Verified Properties</h5>
+                        <p>Every listing is personally vetted by our team to ensure quality and safety.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up delay-3">
+                    <div class="why-card h-100">
+                        <div class="why-icon wi-4"><i class="bi bi-headset"></i></div>
+                        <h5>24/7 Support</h5>
+                        <p>Our travel experts are available around the clock to assist you anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BACK TO TOP ========== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <!-- ========== FOOTER ========== -->
     <footer class="footer-section">
         <div class="container">
@@ -1548,13 +1897,125 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Filter tab interaction
+        // ===== SCROLL ANIMATIONS (IntersectionObserver) =====
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.querySelector('.navbar-vacation');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== COUNTER ANIMATION =====
+        function animateCounters() {
+            document.querySelectorAll('.stat-number[data-target]').forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 1800;
+                const start = performance.now();
+
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    let current = Math.floor(eased * target);
+
+                    if (target >= 1000) {
+                        counter.textContent = current.toLocaleString() + '+';
+                    } else {
+                        counter.textContent = current + (target === 24 ? '/7' : '+');
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    }
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) statsObserver.observe(statsSection);
+
+        // ===== DESTINATION FILTER =====
         document.querySelectorAll('.filter-tab').forEach(tab => {
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+                const cards = document.querySelectorAll('.destination-col');
+
+                cards.forEach(card => {
+                    card.classList.add('hiding');
+                });
+
+                setTimeout(() => {
+                    cards.forEach(card => {
+                        const region = card.getAttribute('data-region');
+                        if (filter === 'all' || region === filter) {
+                            card.classList.remove('hidden-filter', 'hiding');
+                        } else {
+                            card.classList.add('hidden-filter');
+                            card.classList.remove('hiding');
+                        }
+                    });
+
+                    // Re-trigger fade-in for visible cards
+                    setTimeout(() => {
+                        cards.forEach(card => {
+                            if (!card.classList.contains('hidden-filter')) {
+                                card.classList.remove('hiding');
+                            }
+                        });
+                    }, 50);
+                }, 300);
             });
         });
+
+        // ===== WISHLIST HEART TOGGLE =====
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (this.classList.contains('active')) {
+                    icon.className = 'bi bi-heart-fill';
+                } else {
+                    icon.className = 'bi bi-heart';
+                }
+            });
+        });
+
+        // ===== BACK TO TOP =====
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.scrollY > 400);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.documentElement.style.scrollBehavior = 'smooth';
     </script>
 </body>
 </html>
